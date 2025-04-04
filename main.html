@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-slate-900">
+    <section class="max-w-md min-h-screen mx-auto py-6 bg-gray-200">
+        <header>
+            <nav class="flex justify-around items-center">
+                <img class="w-16" src="assets/106890_finance_512x512.png" alt="">
+                <div>
+                    <h1 class="text-3xl font-bold">$<span id="main-balance">4500</span> </h1>
+                    <p class="border rounded p-1">Available Balance</p>
+                </div>
+                <button id="logout-btn" class="btn">Log Out</button>
+            </nav>
+            <section class="mt-10 w-11/12 mx-auto text-center">
+                <h1 class="text-2xl font-bold mb-2 text-orange-500">Welcome to PayCash</h1>
+                <p>Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+                <div class="cards grid grid-cols-3 mt-12 gap-2">
+                    <div id="add-money-box" class="box cursor-pointer border border-orange-500 p-4 rounded-sm">
+                        <img class="w-8 mx-auto" src="assets/wallet 1.png" alt="">
+                        <h1>Add Money</h1>
+                    </div>
+                    <div id="cashout-box" class="box cursor-pointer border border-orange-500 p-4 rounded-sm">
+                        <img class="w-8 mx-auto" src="assets/wallet 1.png" alt="">
+                        <h1>Cash Out</h1>
+                    </div>
+                    <div class="box cursor-pointer border border-orange-500 p-4 rounded-sm">
+                        <img class="w-8 mx-auto" src="assets/wallet 1.png" alt="">
+                        <h1>Pay Bill</h1>
+                    </div>
+                    <div class="box cursor-pointer border border-orange-500 p-4 rounded-sm">
+                        <img class="w-8 mx-auto" src="assets/wallet 1.png" alt="">
+                        <h1>Transfer Money</h1>
+                    </div>
+                    <div class="box cursor-pointer border border-orange-500 p-4 rounded-sm">
+                        <img class="w-8 mx-auto" src="assets/wallet 1.png" alt="">
+                        <h1>Get Bonus</h1>
+                    </div>
+                    <div id="transaction-box" class="box cursor-pointer border border-orange-500 p-4 rounded-sm">
+                        <img class="w-8 mx-auto" src="assets/wallet 1.png" alt="">
+                        <h1>Transaction History</h1>
+                    </div>
+                </div>
+              
+            </section>
+            <section id="addmoney">
+                <h1 class="text-center text-3xl font-bold text-orange-500 mt-5">Add Money</h1>
+                <div class="">
+                    <div class="hero-content flex-col lg:flex-row-reverse">
+                     
+                      <div class="card  w-full max-w-sm shrink-0 shadow-md">
+                        <div class="card-body">
+                            <legend>Select Bank</legend>
+                            <select id="allbank" class="select">
+                                <option disabled selected>Select Bank</option>
+                                <option value="Bkash">Bkash</option>
+                                <option value="Nagad">Nagad</option>
+                                <option value="dbbl">DBBl</option>
+                              </select>
+                              <fieldset class="fieldset">
+                                <label class="fieldset-label">Account Number</label>
+                                <input value="01301301302" id="acc-number" type="number" class="input" placeholder="Type your Account No" required/>
+                                <label class="fieldset-label">Amount</label>
+                                <input  id="amount" type="number" class="input" placeholder="Type your Amount" required/>
+
+                                <label class="fieldset-label">PIN</label>
+                                <input value="1234" id="pin" type="text" class="input" placeholder="Type your PIN" required/>
+                                <div><a class="link link-hover">Forgot password?</a></div>
+                                <button id="add-money" type="submit" id="login-btn" class="btn btn-neutral bg-orange-500 border-none mt-4 text-xl font-medium">Add Money</button>
+                              </fieldset>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </section> 
+            <section id="cashout">
+                <h2 class="text-center text-3xl font-bold text-orange-500 mt-5">Cash Out</h2>
+                <div class="fieldset hero-content flex-col lg:flex-row-reverse  items-center shadow-md mx-8 p-8">
+                    <label class="fieldset-label">Account Number</label>
+                    <input value="01301301302" id="acc-number" type="number" class="input" placeholder="Type your Account No" required/>
+                    <label class="fieldset-label">Cash Out Amount</label>
+                    <input  id="cashout-amount" type="number" class="input" placeholder="Type your Amount" required/>
+
+                    <label class="fieldset-label">PIN</label>
+                    <input value="1234" id="cashout-pin" type="text" class="input" placeholder="Type your PIN" required/>
+                    <div><a class="link link-hover">Forgot password?</a></div>
+                    <button id="cashout-btn" type="submit" id="login-btn" class="btn btn-neutral bg-orange-500 border-none mt-4 px-32 font-medium ">Cash Out</button>
+                </div>
+            </section>
+            <section id="transaction-history">
+                <h1 class="text-2xl font-bold text-orange-500 text-center p-4">Transaction History</h1>
+                <div id="transaction-container" class="text-center">
+
+                </div>
+            </section>
+           
+        </header>
+    </section>
+    <script src="./script/addMoney.js"></script>
+    <script src="utilities/utilities.js"></script>
+    <script src="utilities/toggle.js"></script>
+    <script src="script/cashout.js"></script>
+    <script src="script/transaction.js"></script>
+    <script src="script/login.js"></script>
+</body>
+</html>
